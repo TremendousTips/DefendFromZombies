@@ -1,0 +1,377 @@
+{
+  "name": "genrojotree",
+  "tree": {
+    "$className": "DataModel",
+    "ReplicatedStorage": {
+      "Shared": {
+        "$className": "Folder",
+        "Features": {
+          "$className": "Folder",
+          "App": {
+            "$className": "Folder",
+            "AppSlice": {
+              "$path": "src/Features/App/AppSlice.luau"
+            },
+            "AppClient": {
+              "$path": "src/Features/App/Client.luau"
+            },
+            "HUD": {
+              "$className": "Folder",
+              "Boosts": {
+                "$path": "src/Features/App/HUD/Boosts.luau"
+              },
+              "LeftSideBar": {
+                "$path": "src/Features/App/HUD/LeftSideBar.luau"
+              },
+              "NitroBar": {
+                "$path": "src/Features/App/HUD/NitroBar.luau"
+              },
+              "NitroBoost": {
+                "$path": "src/Features/App/HUD/NitroBoost.luau"
+              },
+              "RightSideBar": {
+                "$path": "src/Features/App/HUD/RightSideBar.luau"
+              },
+              "RightSideMonitization": {
+                "$path": "src/Features/App/HUD/RightSideMonitization.luau"
+              },
+              "Components": {
+                "$className": "Folder",
+                "BoostButton": {
+                  "$path": "src/Features/App/HUD/components/BoostButton.luau"
+                },
+                "CurrencyFrame": {
+                  "$path": "src/Features/App/HUD/components/CurrencyFrame.luau"
+                },
+                "LeftSideBarButton": {
+                  "$path": "src/Features/App/HUD/components/LeftSideBarButton.luau"
+                },
+                "RightSideMonitizationButton": {
+                  "$path": "src/Features/App/HUD/components/RightSideMonitizationButton.luau"
+                }
+              }
+            },
+            "Menus": {
+              "$className": "Folder",
+              "RebirthMenu": {
+                "$path": "src/Features/App/Menus/RebirthMenu"
+              },
+              "RewardsMenu": {
+                "$path": "src/Features/App/Menus/RewardsMenu"
+              },
+              "StarterPackMenu": {
+                "$path": "src/Features/App/Menus/StarterPackMenu"
+              },
+              "WheelMenu": {
+                "$path": "src/Features/App/Menus/WheelMenu"
+              }
+            },
+            "Modules": {
+              "$className": "Folder",
+              "AppConstants": {
+                "$path": "src/Features/App/Modules/AppConstants.luau"
+              },
+              "AppProductIds": {
+                "$path": "src/Features/App/Modules/AppProductIds.luau"
+              }
+            },
+            "RootUI": {
+              "$path": "src/Features/App/RootUI.luau"
+            }
+          },
+          "Plot": {
+            "$className": "Folder",
+            "PlotClient": {
+              "$path": "src/Features/Plot/Client.luau"
+            },
+            "Modules": {
+              "$className": "Folder",
+              "Classes": {
+                "$className": "Folder",
+                "Client": {
+                  "$className": "Folder",
+                  "PlotClass": {
+                    "$path": "src/Features/Plot/Modules/Classes/Client/PlotClass.luau"
+                  },
+                  "VisualCrateClass": {
+                    "$path": "src/Features/Plot/Modules/Classes/Client/VisualCrateClass.luau"
+                  },
+                  "VisualTowerClass": {
+                    "$path": "src/Features/Plot/Modules/Classes/Client/VisualTowerClass.luau"
+                  }
+                },
+                "Server": {
+                  "$className": "Folder",
+                  "PlotClass": {
+                    "$path": "src/Features/Plot/Modules/Classes/Server/PlotClass.luau"
+                  }
+                },
+                "Shared": {
+                  "$className": "Folder",
+                  "CrateClass": {
+                    "$path": "src/Features/Plot/Modules/Classes/Shared/CrateClass.luau"
+                  },
+                  "TowerClass": {
+                    "$path": "src/Features/Plot/Modules/Classes/Shared/TowerClass.luau"
+                  },
+                  "ZombieClass": {
+                    "$path": "src/Features/Plot/Modules/Classes/Shared/ZombieClass.luau"
+                  }
+                }
+              },
+              "PlotSync": {
+                "$path": "src/Features/Plot/Modules/PlotSync.luau"
+              }
+            }
+          },
+          "Wheel": {
+            "$className": "Folder",
+            "WheelClient": {
+              "$path": "src/Features/Wheel/Client.luau"
+            },
+            "Modules": {
+              "$className": "Folder",
+              "WheelInfo": {
+                "$path": "src/Features/Wheel/Modules/WheelInfo.luau"
+              },
+              "WheelProductIds": {
+                "$path": "src/Features/Wheel/Modules/WheelProductIds.luau"
+              }
+            },
+            "WheelSlice": {
+              "$path": "src/Features/Wheel/WheelSlice.luau"
+            }
+          }
+        },
+        "Modular": {
+          "$className": "Folder",
+          "Game": {
+            "$className": "Folder",
+            "AnimationIds": {
+              "$path": "src/Modular/Game/AnimationIds.luau"
+            },
+            "DataTemplate": {
+              "$path": "src/Modular/Game/DataTemplate.luau"
+            },
+            "Gamepasses": {
+              "$path": "src/Modular/Game/Gamepasses.luau"
+            }
+          },
+          "Math": {
+            "$className": "Folder",
+            "FormatNumber": {
+              "$path": "src/Modular/Math/FormatNumber.luau"
+            },
+            "IndexFromValue": {
+              "$path": "src/Modular/Math/IndexFromValue.luau"
+            },
+            "ScaleModel": {
+              "$path": "src/Modular/Math/ScaleModel.luau"
+            },
+            "TweenModel": {
+              "$path": "src/Modular/Math/TweenModel.luau"
+            },
+            "getDictionaryLength": {
+              "$path": "src/Modular/Math/getDictionaryLength.luau"
+            },
+            "getUnusedIndex": {
+              "$path": "src/Modular/Math/getUnusedIndex.luau"
+            }
+          },
+          "Services": {
+            "$className": "Folder",
+            "BoostService": {
+              "$className": "Folder",
+              "BoostServiceClient": {
+                "$path": "src/Modular/Services/BoostService/Client.luau"
+              },
+              "BoostServiceUtils": {
+                "$path": "src/Modular/Services/BoostService/Utils.luau"
+              }
+            },
+            "CameraService": {
+              "$className": "Folder",
+              "CameraServiceClient": {
+                "$path": "src/Modular/Services/CameraService/Client.luau"
+              }
+            },
+            "FunnelService": {
+              "$className": "Folder",
+              "FunnelServiceClient": {
+                "$path": "src/Modular/Services/FunnelService/Client.luau"
+              }
+            },
+            "ItemService": {
+              "$className": "Folder",
+              "ItemServiceClient": {
+                "$path": "src/Modular/Services/ItemService/Client.luau"
+              }
+            },
+            "LuckService": {
+              "$className": "Folder",
+              "LuckServiceClient": {
+                "$path": "src/Modular/Services/LuckService/Client.luau"
+              },
+              "LuckServiceUtils": {
+                "$path": "src/Modular/Services/LuckService/Utils.luau"
+              }
+            },
+            "MonitizationService": {
+              "$className": "Folder",
+              "MonitizationServiceClient": {
+                "$path": "src/Modular/Services/MonitizationService/Client.luau"
+              }
+            },
+            "SoundService": {
+              "$className": "Folder",
+              "SoundServiceClient": {
+                "$path": "src/Modular/Services/SoundService/Client.luau"
+              },
+              "Modules": {
+                "$className": "Folder",
+                "BackgroundMusic": {
+                  "$path": "src/Modular/Services/SoundService/Modules/BackgroundMusic.luau"
+                },
+                "SoundIds": {
+                  "$path": "src/Modular/Services/SoundService/Modules/SoundIds.luau"
+                }
+              }
+            }
+          },
+          "UI": {
+            "$className": "Folder",
+            "Components": {
+              "$className": "Folder",
+              "Advanced": {
+                "$className": "Folder",
+                "AnimatedButton": {
+                  "$path": "src/Modular/UI/components/advanced/AnimatedButton.luau"
+                },
+                "AutoScaledFrame": {
+                  "$path": "src/Modular/UI/components/advanced/AutoScaledFrame.luau"
+                },
+                "TextLabel": {
+                  "$path": "src/Modular/UI/components/advanced/TextLabel.luau"
+                }
+              },
+              "Foundational": {
+                "$className": "Folder",
+                "Button": {
+                  "$path": "src/Modular/UI/components/foundational/Button.luau"
+                },
+                "Frame": {
+                  "$path": "src/Modular/UI/components/foundational/Frame.luau"
+                },
+                "ImageLabel": {
+                  "$path": "src/Modular/UI/components/foundational/ImageLabel.luau"
+                }
+              },
+              "Specific": {
+                "$className": "Folder",
+                "CenterFrame": {
+                  "$path": "src/Modular/UI/components/specific/CenterFrame.luau"
+                },
+                "StudButton": {
+                  "$path": "src/Modular/UI/components/specific/StudButton.luau"
+                },
+                "StudImage": {
+                  "$path": "src/Modular/UI/components/specific/StudImage.luau"
+                }
+              }
+            },
+            "Hooks": {
+              "$className": "Folder",
+              "useViewportSize": {
+                "$path": "src/Modular/UI/hooks/useViewportSize.luau"
+              }
+            },
+            "Modules": {
+              "$className": "Folder",
+              "FormatTime": {
+                "$path": "src/Modular/UI/modules/FormatTime.luau"
+              },
+              "Gradients": {
+                "$path": "src/Modular/UI/modules/Gradients.luau"
+              },
+              "ImageIds": {
+                "$path": "src/Modular/UI/modules/ImageIds.luau"
+              }
+            }
+          }
+        }
+      },
+      "Packages": {
+        "$path": "Packages"
+      }
+    },
+    "ServerScriptService": {
+      "Server": {
+        "$path": "src/startup/Server.server.luau"
+      },
+      "Features": {
+        "$className": "Folder",
+        "App": {
+          "$className": "Folder",
+          "AppServer": {
+            "$path": "src/Features/App/Server.luau"
+          }
+        },
+        "Plot": {
+          "$className": "Folder",
+          "PlotServer": {
+            "$path": "src/Features/Plot/Server.luau"
+          }
+        },
+        "Wheel": {
+          "$className": "Folder",
+          "WheelServer": {
+            "$path": "src/Features/Wheel/Server.luau"
+          }
+        }
+      },
+      "Modular": {
+        "$className": "Folder",
+        "Services": {
+          "$className": "Folder",
+          "BoostService": {
+            "$className": "Folder",
+            "BoostServiceServer": {
+              "$path": "src/Modular/Services/BoostService/Server.luau"
+            }
+          },
+          "FunnelService": {
+            "$className": "Folder",
+            "FunnelServiceServer": {
+              "$path": "src/Modular/Services/FunnelService/Server.luau"
+            }
+          },
+          "ItemService": {
+            "$className": "Folder",
+            "ItemServiceServer": {
+              "$path": "src/Modular/Services/ItemService/Server.luau"
+            }
+          },
+          "LuckService": {
+            "$className": "Folder",
+            "LuckServiceServer": {
+              "$path": "src/Modular/Services/LuckService/Server.luau"
+            }
+          },
+          "MonitizationService": {
+            "$className": "Folder",
+            "MonitizationServiceServer": {
+              "$path": "src/Modular/Services/MonitizationService/Server.luau"
+            }
+          }
+        }
+      }
+    },
+    "StarterPlayer": {
+      "StarterPlayerScripts": {
+        "Client": {
+          "$path": "src/startup/Client.client.luau"
+        }
+      }
+    }
+  }
+}
