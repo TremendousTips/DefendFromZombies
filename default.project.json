@@ -81,46 +81,43 @@
           },
           "Plot": {
             "$className": "Folder",
+            "Classes": {
+              "$className": "Folder",
+              "Plots": {
+                "$className": "Folder",
+                "PlotClassClient": {
+                  "$path": "src/Features/Plot/Classes/Plots/PlotClassClient.luau"
+                }
+              },
+              "Towers": {
+                "$className": "Folder",
+                "TowerClassClient": {
+                  "$path": "src/Features/Plot/Classes/Towers/TowerClassClient.luau"
+                },
+                "TowerClassShared": {
+                  "$path": "src/Features/Plot/Classes/Towers/TowerClassShared.luau"
+                }
+              },
+              "Zombies": {
+                "$className": "Folder",
+                "ZombieClassClient": {
+                  "$path": "src/Features/Plot/Classes/Zombies/ZombieClassClient.luau"
+                },
+                "ZombieClassShared": {
+                  "$path": "src/Features/Plot/Classes/Zombies/ZombieClassShared.luau"
+                }
+              }
+            },
             "PlotClient": {
               "$path": "src/Features/Plot/Client.luau"
             },
             "Modules": {
               "$className": "Folder",
-              "Classes": {
-                "$className": "Folder",
-                "Client": {
-                  "$className": "Folder",
-                  "PlotClass": {
-                    "$path": "src/Features/Plot/Modules/Classes/Client/PlotClass.luau"
-                  },
-                  "VisualCrateClass": {
-                    "$path": "src/Features/Plot/Modules/Classes/Client/VisualCrateClass.luau"
-                  },
-                  "VisualTowerClass": {
-                    "$path": "src/Features/Plot/Modules/Classes/Client/VisualTowerClass.luau"
-                  }
-                },
-                "Server": {
-                  "$className": "Folder",
-                  "PlotClass": {
-                    "$path": "src/Features/Plot/Modules/Classes/Server/PlotClass.luau"
-                  }
-                },
-                "Shared": {
-                  "$className": "Folder",
-                  "CrateClass": {
-                    "$path": "src/Features/Plot/Modules/Classes/Shared/CrateClass.luau"
-                  },
-                  "TowerClass": {
-                    "$path": "src/Features/Plot/Modules/Classes/Shared/TowerClass.luau"
-                  },
-                  "ZombieClass": {
-                    "$path": "src/Features/Plot/Modules/Classes/Shared/ZombieClass.luau"
-                  }
-                }
+              "Towers": {
+                "$path": "src/Features/Plot/Modules/Towers.luau"
               },
-              "PlotSync": {
-                "$path": "src/Features/Plot/Modules/PlotSync.luau"
+              "Zombies": {
+                "$path": "src/Features/Plot/Modules/Zombies.luau"
               }
             }
           },
@@ -318,6 +315,21 @@
         },
         "Plot": {
           "$className": "Folder",
+          "Classes": {
+            "$className": "Folder",
+            "Plots": {
+              "$className": "Folder",
+              "PlotClassServer": {
+                "$path": "src/Features/Plot/Classes/Plots/PlotClassServer.luau"
+              }
+            },
+            "Towers": {
+              "$className": "Folder",
+              "TowerClassServer": {
+                "$path": "src/Features/Plot/Classes/Towers/TowerClassServer.luau"
+              }
+            }
+          },
           "PlotServer": {
             "$path": "src/Features/Plot/Server.luau"
           }
