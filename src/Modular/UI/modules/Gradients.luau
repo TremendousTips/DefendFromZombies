@@ -13,7 +13,7 @@ return {
     Uncommon = ColorSequence.new(Color3.fromRGB(0, 255, 136),Color3.fromRGB(217, 255, 0)),
     Rare = ColorSequence.new(Color3.fromRGB(0, 102, 255),Color3.fromRGB(0, 255, 242)),
     Epic = ColorSequence.new(Color3.fromRGB(153, 0, 255),Color3.fromRGB(240, 72, 255)),
-    Legendary = ColorSequence.new(Color3.fromRGB(255, 94, 0),Color3.fromRGB(255, 238, 0)),
+    Legendary = ColorSequence.new(Color3.fromRGB(255, 212, 21),Color3.fromRGB(255, 251, 201)),
     Mythic = ColorSequence.new(Color3.fromRGB(255, 0, 234),Color3.fromRGB(241, 85, 255)),
     Godly = ColorSequence.new(Color3.fromRGB(0, 255, 0),Color3.fromRGB(0, 255, 221)),
     Secret = ColorSequence.new(Color3.fromRGB(18, 0, 68),Color3.fromRGB(119, 0, 255)),

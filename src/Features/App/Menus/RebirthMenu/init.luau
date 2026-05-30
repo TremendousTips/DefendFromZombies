@@ -1,21 +1,17 @@
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
 
 local vide = require(ReplicatedStorage.Packages.vide)
-local AppConstants = require(ReplicatedStorage.Shared.Features.App.Modules.AppConstants)
 local AppSlice = require(ReplicatedStorage.Shared.Features.App.AppSlice)
 local RebirthSlice = require(ReplicatedStorage.Shared.Features.Rebirth.RebirthSlice)
-local CameraServiceClient = require(ReplicatedStorage.Shared.Modular.Services.CameraService.CameraServiceClient)
 local TextLabel = require(ReplicatedStorage.Shared.Modular.UI.Components.Advanced.TextLabel)
-local Frame = require(ReplicatedStorage.Shared.Modular.UI.Components.Foundational.Frame)
 local CenterFrame = require(ReplicatedStorage.Shared.Modular.UI.Components.Specific.CenterFrame)
 local StudButton = require(ReplicatedStorage.Shared.Modular.UI.Components.Specific.StudButton)
+local StudImage = require(ReplicatedStorage.Shared.Modular.UI.Components.Specific.StudImage)
 local Gradients = require(ReplicatedStorage.Shared.Modular.UI.Modules.Gradients)
 local ImageIds = require(ReplicatedStorage.Shared.Modular.UI.Modules.ImageIds)
 
 local source = vide.source
 local create = vide.create
-local spring = vide.spring
-local effect = vide.effect
 
 local MENU = "Rebirth"
 
@@ -24,23 +20,9 @@ return function()
     AppSlice.openMenu:Connect(function(menu: string)
         if MENU == menu then
             visible(not visible())
-            if not visible() then
-                CameraServiceClient:tweenFOV(AppConstants.NORMAL_FOV, AppConstants.PERIOD, AppConstants.DAMPING_RATIO)
-                CameraServiceClient:tweenBlur(0, AppConstants.PERIOD, AppConstants.DAMPING_RATIO)
-            else
-                CameraServiceClient:tweenFOV(AppConstants.ZOOMED_FOV, AppConstants.PERIOD, AppConstants.DAMPING_RATIO)
-                CameraServiceClient:tweenBlur(AppConstants.ZOOM_BLUR, AppConstants.PERIOD, AppConstants.DAMPING_RATIO)
-            end
         else
             visible(false)
         end
-    end)
-
-    local progressSizeSource = source(UDim2.fromScale(0.5, 1))
-    local progressSizeSpring = spring(progressSizeSource, 0.3, 1) 
-
-    effect(function()
-        progressSizeSource(UDim2.fromScale(math.min(RebirthSlice.currentDistance()/RebirthSlice.neededDistance(), 1), 1))
     end)
     
     return CenterFrame {
@@ -48,21 +30,57 @@ return function()
         MainBarColor = "Red",
         Visible = visible,
         Icon = ImageIds.Icons.Rebirth,
-        Size = UDim2.fromOffset(730, 460),
+        Size = UDim2.fromOffset(747, 572),
         TopY = 84,
         Closed = function()
-            CameraServiceClient:tweenFOV(AppConstants.NORMAL_FOV, AppConstants.PERIOD, AppConstants.DAMPING_RATIO)
-            CameraServiceClient:tweenBlur(0, AppConstants.PERIOD, AppConstants.DAMPING_RATIO)
         end,
         Children = {
+            TextLabel({
+                Name = "NeedText",
+                Size = UDim2.fromOffset(312, 70),
+                AnchorPoint = Vector2.new(0.5,0),
+                TextYAlignment = Enum.TextYAlignment.Top,
+                Position = UDim2.new(0.5, 0, 0, 5),
+                StrokeThickness = 3,
+                Text = `-YOU NEED-`
+            }),
+            StudImage {
+                Name = "NeedFrame",
+                Size = UDim2.fromOffset(672, 158),
+                AnchorPoint = Vector2.new(0.5,0),
+                Position = UDim2.new(0.5,0,0,72),
+                Color = "Gold",
+            },
+            TextLabel({
+                Name = "RecieveText",
+                Size = UDim2.fromOffset(312, 70),
+                AnchorPoint = Vector2.new(0.5,0),
+                TextYAlignment = Enum.TextYAlignment.Top,
+                Position = UDim2.new(0.5, 0, 0, 239),
+                StrokeThickness = 3,
+                Text = `-YOU RECIEVE-`,
+                Children = {
+                    create "UIGradient" {
+                        Color = Gradients.Golden,
+                        Rotation = -90,
+                    }
+                }
+            }),
+            StudImage {
+                Name = "RecieveFrame",
+                Size = UDim2.fromOffset(672, 158),
+                AnchorPoint = Vector2.new(0.5,0),
+                Position = UDim2.new(0.5,0,0,297),
+                Color = "Gold",
+            },
             StudButton {
                 Name = "RebirthButton",
-                Size = UDim2.fromOffset(250, 80),
+                Size = UDim2.fromOffset(238, 80),
                 AnchorPoint = Vector2.new(0.5,0.5),
-                Position = UDim2.fromScale(0.5, 0.86),
+                Position = UDim2.new(0.5,0,0,509),
                 Color = "Green",
                 Activated = function()
-                    RebirthSlice.requestRebirth:Fire()
+                    RebirthSlice.attemptRebirth:Fire()
                 end,
                 Children = {
                     TextLabel {
@@ -75,55 +93,14 @@ return function()
                     }
                 }
             },
-            TextLabel {
-                Name = "Text",
-                Size = UDim2.fromScale(0.8, 0.5),
-                Text = "Rebirthing will double your coins, but reset your coins, swing, and upgrades",
+            TextLabel({
+                Size = UDim2.fromScale(0.8, 0.15),
+                AnchorPoint = Vector2.new(0.5,0),
+                Position = UDim2.fromScale(0.5, 1),
                 StrokeThickness = 3,
-                AnchorPoint = Vector2.new(0.5, 0.5),
-                Position = UDim2.fromScale(0.5, 0.3)
-            },
-            Frame {
-                Name = "ProgressBar",
-                Size = UDim2.fromOffset(550, 50),
-                AnchorPoint = Vector2.new(0.5,0.5),
-                Position = UDim2.fromScale(0.5, 0.67),
-                BackgroundTransparency = 0.6,
-                BackgroundColor3 = Color3.new(),
-                Children = {
-                    create "UIStroke" {
-                        Thickness = 4,
-                        BorderStrokePosition = Enum.BorderStrokePosition.Inner,
-                    },
-                    Frame {
-                        Name = "Progress",
-                        Size = progressSizeSpring,
-                        AnchorPoint = Vector2.new(0, 0.5),
-                        Position = UDim2.fromScale(0, 0.5),
-                        BackgroundTransparency = 0,
-                        Children = {
-                            create "UIGradient" {
-                                Color = Gradients.Golden,
-                                Rotation = -90,
-                            },
-                            create "UIStroke" {
-                                Thickness = 4,
-                                BorderStrokePosition = Enum.BorderStrokePosition.Inner,
-                            }
-                        }
-
-                    },
-                    TextLabel {
-                        Size = UDim2.fromScale(0.9, 0.9),
-                        AnchorPoint = Vector2.new(0.5,0.5),
-                        Position = UDim2.fromScale(0.5, 0.5),
-                        StrokeThickness = 3,
-                        Text = function()
-                            return `{math.floor(RebirthSlice.currentDistance())} / {RebirthSlice.neededDistance()} Studs`
-                        end,
-                    },
-                }
-            }
+                RichText = true,
+                Text = `<font color="rgb(255,230,0)">WARNING!</font> You ONLY LOSE your <font color="rgb(0,255,50)">CASH</font> but you will keep your towers!`
+            })
         }
     }
 end

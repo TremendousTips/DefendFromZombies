@@ -50,6 +50,10 @@ function client.getGamepassPrice(_self:client, passId:number)
     return MarketplaceService:GetProductInfoAsync(passId, Enum.InfoType.GamePass).PriceInRobux
 end
 
+function client.ownsGamepass(_self:client, passId:number)
+    return MarketplaceService:UserOwnsGamePassAsync(player.UserId, passId)
+end
+
 type client = typeof(client)
 
 return client :: client

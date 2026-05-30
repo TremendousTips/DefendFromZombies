@@ -91,9 +91,9 @@ end
     @return number Eg, 200, 30, 201
 ]]
 function server.getBoost(self:server, player:Player, boost:string)
-    if not self.playerBoosts[player.UserId][boost] then
-        return 100
-    end
+    if not self.playerBoosts[player.UserId] then return 100 end
+    if not self.playerBoosts[player.UserId][boost] then return 100 end
+    
     return (self.playerBoosts[player.UserId][boost] or 0) + 100
 end
 

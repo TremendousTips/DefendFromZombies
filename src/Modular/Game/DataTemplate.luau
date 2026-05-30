@@ -1,12 +1,36 @@
 local template = {
-    Cash = 0,
+    Cash = 500,
+    Rebirth = 0,
+    Inventory = {},
+    Stands = {
+        [1] = {
+            Type = "Empty"
+        }
+    },
+    Upgrades = {
+        Conveyer = 1,
+    },
+    TutorialCompleted = false
 }
 
 export type data = {
-    Cash:number,
+    Cash: number,
+    Rebirth: number,
     Stands: {
-        [number]:TowerInfo|CrateInfo
-    }
+        [number]:StandInfo
+    },
+    Upgrades: {
+        Conveyer: number,
+    },
+    TutorialCompleted: boolean,
+}
+
+export type StandInfo = {
+    Type: "Tower" | "Crate" | "Empty",
+    Name: string?,
+    Mutations: {}?,
+    Cash: number?,
+    Time: number?,
 }
 
 export type TowerInfo = {

@@ -1,15 +1,21 @@
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
+local ServerScriptService = game:GetService("ServerScriptService")
 
-local TowerClassShared = require(ReplicatedStorage.Shared.Features.Plot.Classes.Towers.TowerClassShared)
+local ZombieClassServer = require(ServerScriptService.Features.Plot.Classes.Zombies.ZombieClassServer)
 local Towers = require(ReplicatedStorage.Shared.Features.Plot.Modules.Towers)
 local DataTemplate = require(ReplicatedStorage.Shared.Modular.Game.DataTemplate)
 local towerClass = {}
 towerClass.__index = towerClass
-setmetatable(towerClass, TowerClassShared)
 
 type props = {
     Stand: number,
     TowerInfo: DataTemplate.TowerInfo,
+}
+
+export type towerClass = {
+    getDamage: ((self:towerClass)->(number)),
+    attack: ((self:towerClass, zombie:ZombieClassServer.zombieClass)->()),
+    remove: ((self:towerClass)->())
 }
 
 function towerClass.new(props:props)
@@ -17,16 +23,20 @@ function towerClass.new(props:props)
 
     self.tbl = Towers[props.TowerInfo.Name]
 
-    return self
+    return self :: towerClass
 end
 
-function towerClass.getDamage(self)
+function towerClass.getDamage(self:towerClass)
     local baseDamage = self.tbl.Damage :: number
     return baseDamage
 end
 
-function towerClass.attack(self, zombie)
+function towerClass.attack(self:towerClass, zombie:ZombieClassServer.zombieClass)
     zombie:damage(self:getDamage())
+end
+
+function towerClass.remove(self:towerClass)
+    setmetatable(self, nil)
 end
 
 return towerClass

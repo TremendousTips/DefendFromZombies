@@ -2,16 +2,12 @@ local Players = game:GetService("Players")
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
 
 local vide = require(ReplicatedStorage.Packages.vide)
-local Boosts = require(ReplicatedStorage.Shared.Features.App.HUD.Boosts)
+local Currency = require(ReplicatedStorage.Shared.Features.App.HUD.Currency)
 local LeftSideBar = require(ReplicatedStorage.Shared.Features.App.HUD.LeftSideBar)
-local NitroBar = require(ReplicatedStorage.Shared.Features.App.HUD.NitroBar)
-local NitroBoost = require(ReplicatedStorage.Shared.Features.App.HUD.NitroBoost)
-local RightSideBar = require(ReplicatedStorage.Shared.Features.App.HUD.RightSideBar)
-local RightSideMonitization = require(ReplicatedStorage.Shared.Features.App.HUD.RightSideMonitization)
+local Overlay = require(ReplicatedStorage.Shared.Features.App.Menus.Overlay)
 local RebirthMenu = require(ReplicatedStorage.Shared.Features.App.Menus.RebirthMenu)
-local RewardsMenu = require(ReplicatedStorage.Shared.Features.App.Menus.RewardsMenu)
-local StarterPackMenu = require(ReplicatedStorage.Shared.Features.App.Menus.StarterPackMenu)
-local WheelMenu = require(ReplicatedStorage.Shared.Features.App.Menus.WheelMenu)
+local ShopMenu = require(ReplicatedStorage.Shared.Features.App.Menus.ShopMenu)
+
 
 local root = vide.root
 local create =  vide.create
@@ -23,17 +19,11 @@ return function()
             IgnoreGuiInset = true,
             Parent = Players.LocalPlayer.PlayerGui,
             LeftSideBar(),
-            RightSideBar(),
-            RightSideMonitization(),
-            Boosts(),
-            NitroBar(),
-            NitroBoost(),
+            Currency(),
 
+            ShopMenu(),
             RebirthMenu(),
-            RewardsMenu(),
-            StarterPackMenu(),
-            WheelMenu(),
-            
+            Overlay(),
         }
     end)
 end

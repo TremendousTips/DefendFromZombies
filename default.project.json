@@ -17,47 +17,32 @@
             },
             "HUD": {
               "$className": "Folder",
-              "Boosts": {
-                "$path": "src/Features/App/HUD/Boosts.luau"
+              "Currency": {
+                "$path": "src/Features/App/HUD/Currency.luau"
               },
               "LeftSideBar": {
                 "$path": "src/Features/App/HUD/LeftSideBar.luau"
               },
-              "NitroBar": {
-                "$path": "src/Features/App/HUD/NitroBar.luau"
-              },
-              "NitroBoost": {
-                "$path": "src/Features/App/HUD/NitroBoost.luau"
-              },
-              "RightSideBar": {
-                "$path": "src/Features/App/HUD/RightSideBar.luau"
-              },
-              "RightSideMonitization": {
-                "$path": "src/Features/App/HUD/RightSideMonitization.luau"
-              },
               "Components": {
                 "$className": "Folder",
-                "BoostButton": {
-                  "$path": "src/Features/App/HUD/components/BoostButton.luau"
-                },
-                "CurrencyFrame": {
-                  "$path": "src/Features/App/HUD/components/CurrencyFrame.luau"
-                },
                 "LeftSideBarButton": {
                   "$path": "src/Features/App/HUD/components/LeftSideBarButton.luau"
-                },
-                "RightSideMonitizationButton": {
-                  "$path": "src/Features/App/HUD/components/RightSideMonitizationButton.luau"
                 }
               }
             },
             "Menus": {
               "$className": "Folder",
+              "Overlay": {
+                "$path": "src/Features/App/Menus/Overlay"
+              },
               "RebirthMenu": {
                 "$path": "src/Features/App/Menus/RebirthMenu"
               },
               "RewardsMenu": {
                 "$path": "src/Features/App/Menus/RewardsMenu"
+              },
+              "ShopMenu": {
+                "$path": "src/Features/App/Menus/ShopMenu"
               },
               "StarterPackMenu": {
                 "$path": "src/Features/App/Menus/StarterPackMenu"
@@ -77,16 +62,64 @@
             },
             "RootUI": {
               "$path": "src/Features/App/RootUI.luau"
+            },
+            "Stories": {
+              "$className": "Folder",
+              "Shop.story": {
+                "$path": "src/Features/App/Stories/Shop.story.luau"
+              }
+            }
+          },
+          "Inventory": {
+            "$className": "Folder",
+            "InventoryClient": {
+              "$path": "src/Features/Inventory/Client.luau"
+            },
+            "InventorySlice": {
+              "$path": "src/Features/Inventory/InventorySlice.luau"
             }
           },
           "Plot": {
             "$className": "Folder",
             "Classes": {
               "$className": "Folder",
+              "Conveyer": {
+                "$className": "Folder",
+                "ConveyerClassClient": {
+                  "$path": "src/Features/Plot/Classes/Conveyer/ConveyerClassClient.luau"
+                },
+                "ConveyerCrateClassClient": {
+                  "$path": "src/Features/Plot/Classes/Conveyer/ConveyerCrateClassClient.luau"
+                },
+                "ConveyerCrateUI": {
+                  "$path": "src/Features/Plot/Classes/Conveyer/ConveyerCrateUI.luau"
+                }
+              },
+              "Crates": {
+                "$className": "Folder",
+                "CrateClassClient": {
+                  "$path": "src/Features/Plot/Classes/Crates/CrateClassClient.luau"
+                },
+                "CrateUI": {
+                  "$path": "src/Features/Plot/Classes/Crates/CrateUI.luau"
+                }
+              },
               "Plots": {
                 "$className": "Folder",
+                "NotPlayersPlotClassClient": {
+                  "$path": "src/Features/Plot/Classes/Plots/NotPlayersPlotClassClient.luau"
+                },
+                "PlotButton": {
+                  "$path": "src/Features/Plot/Classes/Plots/PlotButton.luau"
+                },
                 "PlotClassClient": {
                   "$path": "src/Features/Plot/Classes/Plots/PlotClassClient.luau"
+                },
+                "StandButton": {
+                  "$path": "src/Features/Plot/Classes/Plots/StandButton.luau"
+                },
+                "UpgradeButtonClass": {
+                  "$path": "src/Features/Plot/Classes/Plots/UpgradeButtonClass.luau"
                 }
               },
               "Towers": {
@@ -94,17 +127,20 @@
                 "TowerClassClient": {
                   "$path": "src/Features/Plot/Classes/Towers/TowerClassClient.luau"
                 },
-                "TowerClassShared": {
-                  "$path": "src/Features/Plot/Classes/Towers/TowerClassShared.luau"
+                "TowerUI": {
+                  "$path": "src/Features/Plot/Classes/Towers/TowerUI.luau"
                 }
               },
               "Zombies": {
                 "$className": "Folder",
+                "DyingAnims": {
+                  "$path": "src/Features/Plot/Classes/Zombies/DyingAnims.luau"
+                },
+                "Healthbar": {
+                  "$path": "src/Features/Plot/Classes/Zombies/Healthbar.luau"
+                },
                 "ZombieClassClient": {
                   "$path": "src/Features/Plot/Classes/Zombies/ZombieClassClient.luau"
-                },
-                "ZombieClassShared": {
-                  "$path": "src/Features/Plot/Classes/Zombies/ZombieClassShared.luau"
                 }
               }
             },
@@ -113,12 +149,90 @@
             },
             "Modules": {
               "$className": "Folder",
+              "Crates": {
+                "$path": "src/Features/Plot/Modules/Crates.luau"
+              },
+              "SkipWaitTimes": {
+                "$path": "src/Features/Plot/Modules/SkipWaitTimes.luau"
+              },
+              "StandRequirements": {
+                "$path": "src/Features/Plot/Modules/StandRequirements.luau"
+              },
+              "Sync": {
+                "$path": "src/Features/Plot/Modules/Sync.luau"
+              },
               "Towers": {
                 "$path": "src/Features/Plot/Modules/Towers.luau"
               },
               "Zombies": {
                 "$path": "src/Features/Plot/Modules/Zombies.luau"
               }
+            },
+            "PlotSlice": {
+              "$path": "src/Features/Plot/PlotSlice.luau"
+            },
+            "PlotUtils": {
+              "$path": "src/Features/Plot/Utils.luau"
+            }
+          },
+          "Rebirth": {
+            "$className": "Folder",
+            "RebirthClient": {
+              "$path": "src/Features/Rebirth/Client.luau"
+            },
+            "Modules": {
+              "$className": "Folder",
+              "RebirthRequirements": {
+                "$path": "src/Features/Rebirth/Modules/RebirthRequirements.luau"
+              }
+            },
+            "RebirthSlice": {
+              "$path": "src/Features/Rebirth/RebirthSlice.luau"
+            }
+          },
+          "Shop": {
+            "$className": "Folder",
+            "ShopSlice": {
+              "$path": "src/Features/Shop/ShopSlice.luau"
+            }
+          },
+          "Tutorial": {
+            "$className": "Folder",
+            "TutorialClient": {
+              "$path": "src/Features/Tutorial/Client.luau"
+            },
+            "Steps": {
+              "1": {
+                "$path": "src/Features/Tutorial/Steps/1.luau"
+              },
+              "2": {
+                "$path": "src/Features/Tutorial/Steps/2.luau"
+              },
+              "3": {
+                "$path": "src/Features/Tutorial/Steps/3.luau"
+              },
+              "4": {
+                "$path": "src/Features/Tutorial/Steps/4.luau"
+              },
+              "$className": "Folder"
+            },
+            "TutorialSlice": {
+              "$path": "src/Features/Tutorial/TutorialSlice.luau"
+            }
+          },
+          "Upgrades": {
+            "$className": "Folder",
+            "UpgradesClient": {
+              "$path": "src/Features/Upgrades/Client.luau"
+            },
+            "Modules": {
+              "$className": "Folder",
+              "UpgradeCosts": {
+                "$path": "src/Features/Upgrades/Modules/UpgradeCosts.luau"
+              }
+            },
+            "UpgradesSlice": {
+              "$path": "src/Features/Upgrades/UpgradesSlice.luau"
             }
           },
           "Wheel": {
@@ -219,6 +333,12 @@
                 "$path": "src/Modular/Services/MonitizationService/Client.luau"
               }
             },
+            "ProxPromptService": {
+              "$className": "Folder",
+              "ProxPromptServiceClient": {
+                "$path": "src/Modular/Services/ProxPromptService/Client.luau"
+              }
+            },
             "SoundService": {
               "$className": "Folder",
               "SoundServiceClient": {
@@ -309,14 +429,38 @@
         "$className": "Folder",
         "App": {
           "$className": "Folder",
+          "Menus": {
+            "$className": "Folder",
+            "ShopMenu": {
+              "$className": "Folder",
+              "Components": {
+                "$className": "Folder",
+                "ServerLuck": {
+                  "$path": "src/Features/App/Menus/ShopMenu/components/ServerLuck.luau"
+                }
+              }
+            }
+          },
           "AppServer": {
             "$path": "src/Features/App/Server.luau"
+          }
+        },
+        "Inventory": {
+          "$className": "Folder",
+          "InventoryServer": {
+            "$path": "src/Features/Inventory/Server.luau"
           }
         },
         "Plot": {
           "$className": "Folder",
           "Classes": {
             "$className": "Folder",
+            "Crates": {
+              "$className": "Folder",
+              "CrateClassServer": {
+                "$path": "src/Features/Plot/Classes/Crates/CrateClassServer.luau"
+              }
+            },
             "Plots": {
               "$className": "Folder",
               "PlotClassServer": {
@@ -328,10 +472,34 @@
               "TowerClassServer": {
                 "$path": "src/Features/Plot/Classes/Towers/TowerClassServer.luau"
               }
+            },
+            "Zombies": {
+              "$className": "Folder",
+              "ZombieClassServer": {
+                "$path": "src/Features/Plot/Classes/Zombies/ZombieClassServer.luau"
+              }
             }
           },
           "PlotServer": {
             "$path": "src/Features/Plot/Server.luau"
+          }
+        },
+        "Rebirth": {
+          "$className": "Folder",
+          "RebirthServer": {
+            "$path": "src/Features/Rebirth/Server.luau"
+          }
+        },
+        "Tutorial": {
+          "$className": "Folder",
+          "TutorialServer": {
+            "$path": "src/Features/Tutorial/Server.luau"
+          }
+        },
+        "Upgrades": {
+          "$className": "Folder",
+          "UpgradesServer": {
+            "$path": "src/Features/Upgrades/Server.luau"
           }
         },
         "Wheel": {

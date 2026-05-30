@@ -9,96 +9,96 @@ local tbl = {
     ["Turret"] = {
         Damage = 1,
         Effect = "Shoot",
-        Image = "rbxassetid://98773597208257",
+        Image = "rbxassetid://108116526686895",
         Rarity = "Rare",
     },
     ["Ultra Turret"] = {
         Damage = 2,
         Effect = "Shoot",
-        Image = "rbxassetid://70480924535011",
+        Image = "rbxassetid://71819794516987",
         Rarity = "Epic",
     },
 
     ["Shotgun"] = {
         Damage = 4,
         Effect = "Shoot",
-        Image = "rbxassetid://76647106409748",
+        Image = "rbxassetid://100091463245274",
         Rarity = "Epic",
     },
     ["Ultra Shotgun"] = {
         Damage = 8,
         Effect = "Shoot",
-        Image = "rbxassetid://84132240089162",
+        Image = "rbxassetid://118840564917024",
         Rarity = "Legendary",
     },
 
     ["Flame Thrower"] = {
         Damage = 12,
         Effect = "Shoot",
-        Image = "rbxassetid://112126607428169",
+        Image = "rbxassetid://102576995674170",
         Rarity = "Legendary",
     },
     ["Ultra Flame Thrower"] = {
         Damage = 24,
         Effect = "Shoot",
-        Image = "rbxassetid://94452286227283",
+        Image = "rbxassetid://137849473288752",
         Rarity = "Mythic",
     },
 
     ["Freeze Ray"] = {
         Damage = 40,
         Effect = "Shoot",
-        Image = "rbxassetid://73965591590234",
+        Image = "rbxassetid://92073792317277",
         Rarity = "Mythic",
     },
     ["Ultra Freeze Ray"] = {
         Damage = 80,
         Effect = "Shoot",
-        Image = "rbxassetid://115846789758003",
+        Image = "rbxassetid://73255852711782",
         Rarity = "Godly",
     },
 
     ["Rocket Launcher"] = {
         Damage = 150,
         Effect = "Shoot",
-        Image = "rbxassetid://121202425118362",
+        Image = "rbxassetid://85401156500648",
         Rarity = "Godly",
     },
     ["Ultra Rocket Launcher"] = {
         Damage = 300,
         Effect = "Shoot",
-        Image = "rbxassetid://107974818285707",
+        Image = "rbxassetid://83562106749509",
         Rarity = "Secret",
     },
 
     ["Tesla"] = {
         Damage = 600,
         Effect = "Shoot",
-        Image = "rbxassetid://119687449627216",
+        Image = "rbxassetid://125448879668791",
         Rarity = "Secret",
     },
     ["Ultra Tesla"] = {
         Damage = 1200,
         Effect = "Shoot",
-        Image = "rbxassetid://93011136739726",
+        Image = "rbxassetid://98657039394303",
         Rarity = "Secret",
     },
     ["Raygun"] = {
         Damage = 250,
         Effect = "Shoot",
-        Image = "rbxassetid://81636004046151",
+        Image = "rbxassetid://110260459430234",
         Rarity = "Epic",
     },
     ["Ultra Raygun"] = {
         Damage = 500,
         Effect = "Shoot",
-        Image = "rbxassetid://79276859438300",
+        Image = "rbxassetid://132696470427474",
         Rarity = "Legendary",
     },
     ["Super Ultra Raygun"] = {
         Damage = 750,
         Effect = "Shoot",
-        Image = "rbxassetid://98555479077190",
+        Image = "rbxassetid://127665697951965",
         Rarity = "Mythic",
     },
 

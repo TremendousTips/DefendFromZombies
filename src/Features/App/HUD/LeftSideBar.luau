@@ -2,12 +2,8 @@ local ReplicatedStorage = game:GetService("ReplicatedStorage")
 
 local vide = require(ReplicatedStorage.Packages.vide)
 local AppSlice = require(ReplicatedStorage.Shared.Features.App.AppSlice)
-local CurrencyFrame = require(ReplicatedStorage.Shared.Features.App.HUD.Components.CurrencyFrame)
 local LeftSideBarButton = require(ReplicatedStorage.Shared.Features.App.HUD.Components.LeftSideBarButton)
 local AppConstants = require(ReplicatedStorage.Shared.Features.App.Modules.AppConstants)
-local RebirthSlice = require(ReplicatedStorage.Shared.Features.Rebirth.RebirthSlice)
-local RewardInfo = require(ReplicatedStorage.Shared.Features.Rewards.Modules.RewardInfo)
-local RewardsSlice = require(ReplicatedStorage.Shared.Features.Rewards.RewardsSlice)
 local WheelSlice = require(ReplicatedStorage.Shared.Features.Wheel.WheelSlice)
 local AutoScaledFrame = require(ReplicatedStorage.Shared.Modular.UI.Components.Advanced.AutoScaledFrame)
 local Frame = require(ReplicatedStorage.Shared.Modular.UI.Components.Foundational.Frame)
@@ -30,39 +26,6 @@ return function()
         end
     end)
 
-    local rebirthNotification = source(false)
-
-    effect(function()
-        if RebirthSlice.currentDistance() >= RebirthSlice.neededDistance() then
-            rebirthNotification(true)
-        else
-            rebirthNotification(false)
-        end
-    end)
-
-    local rewardsNotification = source(false)
-
-    effect(function()
-        local claimed = RewardsSlice.claimedIndexes()
-        local lastClaim = RewardsSlice.lastClaimTime()
-        local nowTime = RewardsSlice.now()
-        local claimable = false
-        for idx = 1, #RewardInfo do
-            if claimed[idx] then
-                continue
-            end
-            if idx > 1 and not claimed[idx - 1] then
-                continue
-            end
-            local cooldown = (idx - 1) * 86400
-            if lastClaim + cooldown - nowTime <= 0 then
-                claimable = true
-                break
-            end
-        end
-        rewardsNotification(claimable)
-    end)
-
     return AutoScaledFrame {
         Name = "LeftSideBar",
         Size = UDim2.fromOffset(300, 500),
@@ -75,17 +38,18 @@ return function()
                 HorizontalAlignment = Enum.HorizontalAlignment.Left,
                 FillDirection = Enum.FillDirection.Vertical,
             },
-            CurrencyFrame {
-                Currency = "Cash",
-                Image = ImageIds.Icons.Cash,
-                BackgroundColor = "Green",
-                Amount = AppSlice.cashAmount
-            },
-            CurrencyFrame {
-                Currency = "Trophy",
-                Image = ImageIds.Icons.Trophy,
+            LeftSideBarButton {
+                Name = "Shop",
+                Icon = ImageIds.Icons.Shop,
                 BackgroundColor = "Gold",
-                Amount = AppSlice.winsAmount
+                Size = UDim2.fromOffset(250, 85),
+                Activated = function()
+                    AppSlice.openMenu:Fire("Shop")
+                end,
+                ImagePosition = UDim2.fromScale(0.175, 0.5),
+                TextPosition = UDim2.fromScale(0.6, 0.5),
+                TextSize = UDim2.fromScale(0.7, 0.7),
+                Notification = source(false)
             },
             Frame {
                 Name = "Buttons",
@@ -104,7 +68,7 @@ return function()
                         Activated = function()
                             AppSlice.openMenu:Fire("Rebirth")
                         end,
-                        Notification = rebirthNotification
+                        Notification = source(false)
                     },
                     LeftSideBarButton {
                         Name = "Rewards",
@@ -113,7 +77,7 @@ return function()
                         Activated = function()
                             AppSlice.openMenu:Fire("Rewards")
                         end,
-                        Notification = rewardsNotification
+                        Notification = source(true)
                     },
                 }
             }

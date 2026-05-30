@@ -11,30 +11,35 @@ type props = {
     Icon: string,
     BackgroundColor: string,
     Activated: (()->()),
+    Size: UDim2?,
+    ImagePosition: UDim2?,
+    TextPosition: UDim2?,
+    TextSize: UDim2?,
     Notification: vide.Source<boolean>,
 }
 
 return function(props:props)
     return StudButton {
         Name = props.Name,
-        Size = UDim2.fromOffset(100, 110),
+        Size = props.Size or UDim2.fromOffset(100, 110),
         Color = props.BackgroundColor,
         Activated = props.Activated,
         Children = {
             ImageLabel {
                 Name = "Icon",
-                Size = UDim2.fromScale(1, 10/11),
+                Size = UDim2.fromScale(0.85,0.85),
                 AnchorPoint = Vector2.new(0.5,0.5),
-                Position = UDim2.fromScale(0.5, 0.5),
+                Position = props.ImagePosition or UDim2.fromScale(0.5, 0.5),
                 Image = props.Icon,
+                SizeConstraint = Enum.SizeConstraint.RelativeYY,
             },
             TextLabel {
                 Name = "Label",
-                Size = UDim2.fromScale(0.95, 0.25),
+                Size = props.TextSize or UDim2.fromScale(0.95, 0.25),
                 Text = props.Name,
                 StrokeThickness = 3,
                 AnchorPoint = Vector2.new(0.5,0.6),
-                Position = UDim2.fromScale(0.5, 1),
+                Position = props.TextPosition or UDim2.fromScale(0.5, 1),
             },
             StudImage {
                 Name = "Notification",
